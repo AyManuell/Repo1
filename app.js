@@ -30,8 +30,8 @@ var budgetModule = (function(){
        inc: []
      },
      totals: {
-       expenses: 0,
-       income: 0
+       exp: 0,
+       inc: 0
      },
      budget: 0,
      percentage: -1
@@ -69,16 +69,16 @@ var budgetModule = (function(){
      calculateTotal('inc');
 
      // calculate the budget: income - expenses
-     data.budget = data.totals.income - data.totals.expenses
+     data.budget = data.totals.inc - data.totals.exp
      // calculate the percentage of the income that we spent
-     data.percentage = Math.round((data.totals.expenses / data.totals.income) * 100)
+     data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100)
 
    },
    getBudget: function(){
      return {
        budget: data.budget,
-       totalIncome: data.totals.income,
-       totalExpenses: data.totals.expenses,
+       totalIncome: data.totals.inc,
+       totalExpenses: data.totals.exp,
        percentage: data.percentage
      }
    },
